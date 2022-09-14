@@ -1,9 +1,11 @@
+
 # Blockchain et développement
 
 ## Pré-requis
 
 - MetaMask
 - Phantom
+- RemixIDE
 
 ## Introduction
 
@@ -71,9 +73,40 @@ blabla
 
 ## Solidity
 
-[Documentation](https://docs.soliditylang.org/en/v0.8.17/)
-[Documentation](https://cryptozombies.io/fr/)
+- [Documentation](https://docs.soliditylang.org/en/v0.8.17/)
+- [CryptoZombies](https://cryptozombies.io/fr/)
+- [RemixIDE](https://remix-project.org/)
+- [Truffle](https://trufflesuite.com/)
 
 Language pour déployer du code (Comme de la programmation objet).
 
 - Smart contract -> class
+
+EVM (Machine Virtuelle Ethereum) = environnement d'exécution des smarts contracts pour ETH.
+
+- Compte de contrat => Gérer le code executer par EVM.
+
+- Compte externe => Association clé publique, clé privée.
+
+Une adresse Smart contract est déterminée au moment du déploiement/création.
+
+Une transaction s'effectue d'un compte à un autre (d'un "wallet" à un autre).
+
+## Gas Price
+
+c'est le carburant de la transaction qui est payé au moment du déploiement.
+
+## En Groupe
+
+### Sujet
+
+- Deployer un smart contract qui cree un token de type ERC20
+- Decrivez comment on peut gerer les nombre a virgules flottante avec Solidity
+- Pourquoi parle-t-on de nombre de decimales au sein du contrat ERC20.sol ?
+- Comment se comporte les blockchains avec le stockage massif de fichiers ? (IPFS.tech et Arweave.org)
+
+### Reponse
+
+- Smart contract token ERC20 : 0x5C7cB3991c0625A9B0707dacbEceEc5739fF90F2
+- Solidity et la machine virtuelle Ethereum ne prennent pas en charge les décimales : seuls des nombres entiers peuvent être utilisés. La solution est d'utiliser un token contract qui peut utiliser des valeurs entières plus grandes (l'EVM prend en charge les entiers 256 bits) de sorte qu'un solde de 1000000000000000000 représente 1 ETH avec 18 décimales, donc un transfert de 4000000000000000 correspondra à 0,004ETH envoyé.
+- 
